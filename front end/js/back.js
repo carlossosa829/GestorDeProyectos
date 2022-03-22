@@ -22,8 +22,5 @@ function CrearRegistro(){
       })
 }
 
-function Inspector(){
-
-}
 
 
