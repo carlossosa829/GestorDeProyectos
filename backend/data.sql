@@ -15,7 +15,7 @@ ALUMNO - maria@alumno.com maria123
 ALUMNO - adalberto@alumno.com adalberto123
 */
 
-USE registro_escolar;
+USE proyectos_escolares;
 
 /*CARRERAS*/
 INSERT INTO carrera(id_carrera,nombre) VALUES

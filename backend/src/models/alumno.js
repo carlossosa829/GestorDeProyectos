@@ -85,6 +85,6 @@ models.Alumno.belongsToMany(models.Tarea, {
   foreignKey: "matricula",
 });*/
 
-sequelize.sync({ force: true }); //SINCRONIZAR BASE DE DATOS
+//sequelize.sync({ force: true }); //SINCRONIZAR BASE DE DATOS
 
 module.exports = Alumno;
