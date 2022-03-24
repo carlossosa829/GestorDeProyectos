@@ -54,7 +54,7 @@ async function authenticateUser(req, res) {
       ...(matricula && { matricula }),
     };
 
-    res.json({ token: getAccessToken(usuario) });
+    res.json({ token: getAccessToken(usuario), usuario});
   } catch (err) {
     handleError(req, res, err);
   }
