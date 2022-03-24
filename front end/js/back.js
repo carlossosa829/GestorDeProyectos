@@ -14,13 +14,36 @@ function CrearRegistro(){
         contentType:"application/json; charset=utf-8",
         dataType:"json",
         success: function(){
-          alert("Registro exitoso");
+          window.location.href = "../html/index.html";
         }, 
         error: function(){
-            alert("Registro exitoso");
+          window.location.href = "../html/index.html";
           }
       })
 }
+
+function login(){
+    let email = document.getElementById("email").value;
+    let contrasena = document.getElementById("pass1").value;
+
+  $.ajax({
+    url:"http://localhost:3300/api/v1/login",
+    type:"POST",
+    data: JSON.stringify({ email, contrasena}),
+    contentType:"application/json; charset=utf-8",
+    dataType:"json",
+    success: function(data){
+      console.log(data)
+      localStorage.setItem("datos", JSON.stringify(data))
+      window.location.href = "../html/inicio.html";
+    }, 
+    error: function(){
+      alert ("Datos incorrectos");
+      }
+  })
+}
+
+
 
 
 
