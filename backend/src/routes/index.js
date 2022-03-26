@@ -12,7 +12,10 @@ const corsOptions = {
 router.options("*", cors(corsOptions));
 router.use(cors(corsOptions));
 router.use("/alumnos", require("./alumnos"));
+router.use("/profesores", require("./profesores"));
 router.use("/carreras", require("./carreras"));
+router.use("/materias", require("./materias"));
+router.use("/proyectos", require("./proyectos"));
 router.use("/usuarios", require("./usuarios"));
 router.use("/", require("./login"));
 

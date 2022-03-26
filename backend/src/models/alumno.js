@@ -68,23 +68,24 @@ Alumno.associate = function (models) {
     },
     onDelete: "SET NULL",
   });
+
+  models.Alumno.belongsToMany(models.Materia, {
+    through: models.CargaAcademica,
+    foreignKey: "alumno_matricula",
+  });
+
+  models.Alumno.belongsToMany(models.Proyecto, {
+    through: models.Equipo,
+    foreignKey: "matricula",
+  });
 };
+
 /*
-models.Alumno.belongsToMany(models.Materia, {
-  through: models.CargaAcademica,
-  foreignKey: "alumno_matricula",
-});
-
-models.Alumno.belongsToMany(models.Proyecto, {
-  through: models.Equipo,
-  foreignKey: "matricula",
-});
-
 models.Alumno.belongsToMany(models.Tarea, {
   through: models.Responsable,
   foreignKey: "matricula",
 });*/
 
-//sequelize.sync({ force: true }); //SINCRONIZAR BASE DE DATOS
+sequelize.sync({ force: true }); //SINCRONIZAR BASE DE DATOS
 
 module.exports = Alumno;
