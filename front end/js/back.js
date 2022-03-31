@@ -35,11 +35,31 @@ function login(){
     success: function(data){
       console.log(data)
       localStorage.setItem("datos", JSON.stringify(data))
-      window.location.href = "../html/inicio.html";
+      window.location.href = "../html/proyectos.html";
     }, 
     error: function(){
       alert ("Datos incorrectos");
       }
+  })
+}
+
+function crear_proyecto() {
+  let nombre_proyecto = document.getElementById("nombre_Proyecto").value;
+  let nrc = document.getElementById("nrc").value;
+  let coordinador = document.getElementById("coordinador").value;
+  let fecha_inicio = document.getElementById("fecha_inicio").value;
+  let fecha_fin = document.getElementById("fecha_fin").value;
+  let fecha_limite = document.getElementById("fecha_limite").value;
+  let descripcion = document.getElementById("descripcion").value;
+  $.ajax({
+    url: "http://localhost:3300/api/v1/proyectos",
+    type: "POST",
+    data: JSON.stringify({ nombre_proyecto, nrc, coordinador, fecha_inicio, fecha_inicio, fecha_limite, descripcion}),
+    contentType: "application/json; charset=utf-8",
+    dataType: "json",
+    success: function () {
+      alert("Proyecto creado");
+    }
   })
 }
 
