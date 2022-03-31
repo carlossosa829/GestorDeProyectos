@@ -46,7 +46,6 @@ function login(){
 function crear_proyecto() {
   let nombre_proyecto = document.getElementById("nombre_Proyecto").value;
   let nrc = document.getElementById("nrc").value;
-  let coordinador = document.getElementById("coordinador").value;
   let fecha_inicio = document.getElementById("fecha_inicio").value;
   let fecha_fin = document.getElementById("fecha_fin").value;
   let fecha_limite = document.getElementById("fecha_limite").value;
@@ -54,7 +53,7 @@ function crear_proyecto() {
   $.ajax({
     url: "http://localhost:3300/api/v1/proyectos",
     type: "POST",
-    data: JSON.stringify({ nombre_proyecto, nrc, coordinador, fecha_inicio, fecha_inicio, fecha_limite, descripcion}),
+    data: JSON.stringify({ nombre_proyecto, nrc, fecha_inicio, fecha_inicio, fecha_limite, descripcion}),
     contentType: "application/json; charset=utf-8",
     dataType: "json",
     success: function () {
