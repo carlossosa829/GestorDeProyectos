@@ -2,6 +2,7 @@
     --primary: #111B54;
     --light: #ffffff;
     --grey: #efefef;
+
 }
 
 body {
@@ -9,67 +10,116 @@ body {
     font-family: 'Muli', sans-serif;
     font-weight: 300;
     color: var(--primary);
+
 }
 
 a:hover {
     text-decoration: none;
+
 }
 
 
-.bg-light { background-color: var(--light) !important; }
 
-.bg-grey { background-color: var(--grey) !important; }
 
-.bg-mix { background: linear-gradient(180deg, var(--light) 50%, var(--grey) 0); }
+.bg-light {
+    background-color: var(--light) !important;
+}
+
+.bg-grey {
+    background-color: linear-gradient(to right, #03fce5, #bfffc1) !important;
+}
+
+.bg-mix {
+    background: linear-gradient(180deg, var(--black) 50%, var(--grey) 0);
+}
 
 
 
 #sidebar-container {
-    min-height: 100vh;
+    min-height: 10vh;
 }
-  
-#sidebar-container .logo{
+
+#sidebar-container .logo {
     padding: 0.875rem 1.25rem;
+
 }
-  
+
 #sidebar-container .menu {
     width: 15rem;
+
 }
 
 #content {
     overflow-y: auto;
     height: 100vh;
     padding-bottom: 5rem;
+
 }
 
 .avatar {
     max-width: 35px;
+    background-color: #7be9e3;
 }
 
 .btn-search {
     right: 0;
+
 }
+
 .container--logo {
     height: 4.2rem;
+
 }
+
 .stat {
-    border-right: 1px solid var(--grey);
+    border-right: 1px solid var(--light);
+
 }
 
 .text_area_1 {
     resize: none;
+
 }
-  
+
 @media (max-width: 768px) {
     #sidebar-container {
-      display: none;
+        display: none;
     }
+
     .stat {
         border: 0;
     }
-  }
-  ul {
-    list-style: none; /* Quitamos los marcadores */
-    padding: 0; /* Quitamos el padding por defecto de la lista */
-    margin-left: 10px; /* Separamos la lista de la izquierda */
-    }
+
+}
+
+ul {
+    list-style: none;
+    /* Quitamos los marcadores */
+    padding: 0;
+    /* Quitamos el padding por defecto de la lista */
+    margin-left: 10px;
+    /* Separamos la lista de la izquierda */
+
+}
+
+
+body {
+    background: #FF58BD;
+    background: linear-gradient(to right, #03fce5, #bfffc1);
+}
+
+
+body::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: -100vw;
+    left: 0;
+    background: linear-gradient(to right, #ff6206, #5de4e9);
+    transition: all .3s;
+}
+
+.loading::after {
+    top: 0;
+}
