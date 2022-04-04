@@ -78,14 +78,13 @@ Alumno.associate = function (models) {
     through: models.Equipo,
     foreignKey: "matricula",
   });
+
+  models.Alumno.belongsToMany(models.Tarea, {
+    through: models.Responsable,
+    foreignKey: "matricula",
+  });
 };
 
-/*
-models.Alumno.belongsToMany(models.Tarea, {
-  through: models.Responsable,
-  foreignKey: "matricula",
-});*/
-
-sequelize.sync({ force: true }); //SINCRONIZAR BASE DE DATOS
+//sequelize.sync({ force: true }); //SINCRONIZAR BASE DE DATOS
 
 module.exports = Alumno;

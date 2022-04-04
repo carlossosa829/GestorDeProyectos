@@ -16,6 +16,10 @@ router.use("/profesores", require("./profesores"));
 router.use("/carreras", require("./carreras"));
 router.use("/materias", require("./materias"));
 router.use("/proyectos", require("./proyectos"));
+router.use("/archivos", require("./archivos"));
+router.use("/asignacion", require("./asignacion"));
+router.use("/entregables", require("./entregables"));
+router.use("/cierre", require("./cierre"));
 router.use("/usuarios", require("./usuarios"));
 router.use("/", require("./login"));
 

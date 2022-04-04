@@ -242,19 +242,17 @@ async function getMateriasAlumno(req, res) {
     .catch((err) => handleError(req, res, err));
 }
 
-// async function getTareasAlumno(req,res){
-//     try{
-//         const {matricula} = req.params;
-//         const tareas = await sequelize.models.Tarea.findAll({
-//             where: {id_tarea}
-//         })
-
-//         res.json(tareas);
-//     }
-//     catch(err){
-//         handleError(req,res,err)
-//     }
-// }
+async function getTareasAlumno(req, res) {
+  try {
+    const { matricula } = req.params;
+    const tareas = await sequelize.models.Tarea.findAll({
+      where: { id_tarea },
+    });
+    res.json(tareas);
+  } catch (err) {
+    handleError(req, res, err);
+  }
+}
 
 module.exports = {
   getAlumnos,
@@ -267,5 +265,3 @@ module.exports = {
   getProyectosAlumno,
   getMateriasAlumno,
 };
-
-//sequelize.sync({force:true})
