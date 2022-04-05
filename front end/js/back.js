@@ -58,7 +58,11 @@ function crear_proyecto() {
     dataType: "json",
     success: function () {
       alert("Proyecto creado");
-    }
+    }, 
+    error: function(){
+      alert ("Proyecto creado");
+      window.location.href = "../html/proyectos.html";
+      }
   })
 }
 
