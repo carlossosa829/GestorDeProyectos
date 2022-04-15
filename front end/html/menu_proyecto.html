@@ -35,11 +35,11 @@
 
                 <!-- Default dropright button -->
                 <div>
-                    <ul>
-                        <li>
+                    <ul class="d-flex align-items-start flex-column">
+                        <li class="fix_bar_side">
                             <div class="btn-group dropright menu" aria-labelledby="dropdownMenuLink">
                                 <button type="button"
-                                    class="d-block text-light p-3 border-0 my-3 h3 font-weight-bold btn btn-secondary dropdown-toggle icon ion-md-apps lead mr-2 "
+                                    class="d-block text-light p-3 border-0 my-3 h3 font-weight-bold btn btn-secondary dropdown-toggle icon ion-md-apps lead mr-3"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Proyectos
                                 </button>
@@ -52,37 +52,37 @@
                                 </div>
                             </div>
                         </li>
-                        <li>
+                        <li class="fix_bar_side">
                             <div class="btn-group dropright menu" aria-labelledby="dropdownMenuLink">
 
                                 <button type="button"
-                                    class="h3 p-3 font-weight-bold btn btn-secondary dropdown-toggle icon ion-md-book lead mr-3 "
+                                    class="d-block text-light p-3 border-0 my-3 h3 font-weight-bold btn btn-secondary dropdown-toggle icon ion-md-book lead mr-3"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Tareas
                                 </button>
-                                <div class="dropdown-menu">
+                                <div class="dropdown-menu bg-light">
                                     <!-- Dropdown menu links -->
-                                    <a class="dropdown-item " href="../html/anadir_tarea.html">Añadir Tarea</a>
+                                    <a class="dropdown-item" href="../html/anadir_tarea.html">Añadir Tarea</a>
                                     <a class="dropdown-item" href="#">Editar Tareas</a>
                                     <a class="dropdown-item" href="#"></a>
                                 </div>
                             </div>
                         </li>
-                        <li>
-                            <a href="#"
-                                class="d-block  p-3 border-0 my-3 h3 font-weight-bold btn btn-secondary icon ion-md-notifications lead mr-2 "><i
+                        <li class="fix_bar_side">
+                            <a href="../html/notificaciones.html"
+                                class="d-block text-light p-3 border-0 my-3 h3 font-weight-bold btn btn-secondary dropdown-toggle icon ion-md-notifications lead mr-3"><i
                                     class=""></i>
                                 Notificaciones</a>
                         </li>
-                        <li>
+                        <li class="fix_bar_side">
                             <a href="#"
-                                class="d-block  p-3 border-0 my-3 h3 font-weight-bold btn btn-secondary icon ion-md-school lead mr-2 "><i
+                                class="d-block text-light p-3 border-0 my-3 h3 font-weight-bold btn btn-secondary dropdown-toggle icon ion-md-school lead mr-3"><i
                                     class=""></i>
                                 Materias</a>
                         </li>
-
                     </ul>
                 </div>
+                <!---->
             </div>
             <!-- Fin sidebar -->
             <div class="w-100">
@@ -146,14 +146,14 @@
                                             <div class="row">
                                                 <div class="col">
                                                     <form action="">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" value=""
-                                                            id="flexCheckDefault">
-                                                        <label class="form-check-label" for="flexCheckDefault">
-                                                            Finalizar
-                                                        </label>
-                                                    </div>
-                                                </form>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="flexCheckDefault">
+                                                            <label class="form-check-label" for="flexCheckDefault">
+                                                                Finalizar
+                                                            </label>
+                                                        </div>
+                                                    </form>
                                                 </div>
                                                 <div class="col">
                                                     <div class="btn-group dropright menu"
@@ -167,8 +167,10 @@
                                                         <div class="dropdown-menu">
                                                             <!-- Dropdown menu links -->
                                                             <a class="dropdown-item" href="#">Editar Tarea</a>
-                                                            <a class="dropdown-item" href="#" id="eliminar_tarea">Eliminar</a>
-                                                            <a class="dropdown-item" href="#" id="guardar_cambios_tarea">Guardar Cambios</a>
+                                                            <a class="dropdown-item" href="#"
+                                                                id="eliminar_tarea">Eliminar</a>
+                                                            <a class="dropdown-item" href="#"
+                                                                id="guardar_cambios_tarea">Guardar Cambios</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -187,14 +189,14 @@
                                             <div class="row">
                                                 <div class="col">
                                                     <form action="">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" value=""
-                                                            id="flexCheckDefault">
-                                                        <label class="form-check-label" for="flexCheckDefault">
-                                                            Finalizar
-                                                        </label>
-                                                    </div>
-                                                </form>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="flexCheckDefault">
+                                                            <label class="form-check-label" for="flexCheckDefault">
+                                                                Finalizar
+                                                            </label>
+                                                        </div>
+                                                    </form>
                                                 </div>
                                                 <div class="col">
                                                     <div class="btn-group dropright menu"
@@ -208,8 +210,10 @@
                                                         <div class="dropdown-menu">
                                                             <!-- Dropdown menu links -->
                                                             <a class="dropdown-item" href="#">Editar Tarea</a>
-                                                            <a class="dropdown-item" href="#" id="eliminar_tarea">Eliminar</a>
-                                                            <a class="dropdown-item" href="#" id="guardar_cambios_tarea">Guardar Cambios</a>
+                                                            <a class="dropdown-item" href="#"
+                                                                id="eliminar_tarea">Eliminar</a>
+                                                            <a class="dropdown-item" href="#"
+                                                                id="guardar_cambios_tarea">Guardar Cambios</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -256,7 +260,7 @@
         <script>
             const profile = JSON.parse(localStorage.getItem("datos"));
             document.getElementById("profileName").innerHTML = profile.usuario.nombre;
-          </script>
+        </script>
     </div>
 </body>
 

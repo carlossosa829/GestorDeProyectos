@@ -22,7 +22,7 @@
   <title>Notificaciones</title>
 </head>
 
-<body data-barba="wrapper" >
+<body data-barba="wrapper">
   <div data-barba="container" data-barba-namespace="home">
     <div class="d-flex" id="content-wrapper">
 
@@ -35,11 +35,11 @@
 
         <!-- Default dropright button -->
         <div>
-          <ul>
-            <li>
+          <ul class="d-flex align-items-start flex-column">
+            <li class="fix_bar_side">
               <div class="btn-group dropright menu" aria-labelledby="dropdownMenuLink">
                 <button type="button"
-                  class="d-block text-light p-3 border-0 my-3 h3 font-weight-bold btn btn-secondary dropdown-toggle icon ion-md-apps lead mr-2 "
+                  class="d-block text-light p-3 border-0 my-3 h3 font-weight-bold btn btn-secondary dropdown-toggle icon ion-md-apps lead mr-3"
                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Proyectos
                 </button>
@@ -52,11 +52,11 @@
                 </div>
               </div>
             </li>
-            <li>
+            <li class="fix_bar_side">
               <div class="btn-group dropright menu" aria-labelledby="dropdownMenuLink">
 
                 <button type="button"
-                  class="h3 p-3 font-weight-bold btn btn-secondary dropdown-toggle icon ion-md-book lead mr-3 "
+                  class="d-block text-light p-3 border-0 my-3 h3 font-weight-bold btn btn-secondary dropdown-toggle icon ion-md-book lead mr-3"
                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Tareas
                 </button>
@@ -68,15 +68,15 @@
                 </div>
               </div>
             </li>
-            <li>
+            <li class="fix_bar_side">
               <a href="../html/notificaciones.html"
-                class="d-block  p-3 border-0 my-3 h3 font-weight-bold btn btn-secondary icon ion-md-notifications lead mr-2 "><i
+                class="d-block text-light p-3 border-0 my-3 h3 font-weight-bold btn btn-secondary dropdown-toggle icon ion-md-notifications lead mr-3"><i
                   class=""></i>
                 Notificaciones</a>
             </li>
-            <li>
+            <li class="fix_bar_side">
               <a href="#"
-                class="d-block  p-3 border-0 my-3 h3 font-weight-bold btn btn-secondary icon ion-md-school lead mr-2 "><i
+                class="d-block text-light p-3 border-0 my-3 h3 font-weight-bold btn btn-secondary dropdown-toggle icon ion-md-school lead mr-3"><i
                   class=""></i>
                 Materias</a>
             </li>
@@ -123,7 +123,7 @@
                 <h1>Notificaciones</h1>
 
                 <div>
-                   <!--
+                  <!--
                     <nav class="navbar navbar-info bg-light">
                         <form class="form-inline">
                           <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Search">
@@ -131,93 +131,101 @@
                         </form>
                       </nav>
                    -->
-                    
-                  <hr> 
+
+                  <hr>
                 </div>
-                    <!-- Navbar content notifications -->
-                    <ul>
-                        <li>
-                            
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                      <div class="input-group-text">
-                                        <input type="checkbox" aria-label="Checkbox for following text input">
-                                      </div>
-                                    </div>
-                                    <div class="col-10">
-                                        <div class="p-2 rounded border border-info bg-light text-left ">
-                                            <a HREF="../html/notificaciones.html"><h5>1</h5></a>
-                                            <p>PERLA HERNANDEZ ha asignado un nuevo entregable.</p>
-                                          </div>
-                                    </div>
-                                    <div id="fecha_notificacion">
-                                        <p align="right">05/04/20</p>
-                                    </div>
-                                  </div>
-                        </li>
-                        <li>
-                            <br>
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                  <div class="input-group-text">
-                                    <input type="checkbox" aria-label="Checkbox for following text input">
-                                  </div>
-                                </div>
-                                <div class="col-10">
-                                    <div class="p-2 rounded border border-info bg-light text-left ">
-                                        <a HREF="../html/notificaciones.html"><h5>2</h5></a>
-                                        <p>PERLA HERNANDEZ ha asignado un nuevo entregable.</p>
-                                      </div>
-                                </div>
-                                <div id="fecha_notificacion">
-                                    <p align="right">03/04/22</p>
-                                </div>
-                              </div>
-                              
-                        </li>
-                        <li>
-                                <br> 
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                    <div class="input-group-text">
-                                        <input type="checkbox" aria-label="Checkbox for following text input">
-                                    </div>
-                                    </div> 
-                                    <div class="col-10">
-                                        <div class="p-2 rounded border border-info bg-light text-left ">
-                                            <a HREF="../html/notificaciones.html"><h5>3</h5></a>
-                                            <p>PERLA HERNANDEZ ha asignado un nuevo entregable.</p>
-                                        </div>
-                                    </div>
-                                    <div id="fecha_notificacion">
-                                        <p align="right">01/04/22</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <br>
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                    <div class="input-group-text">
-                                        <input type="checkbox" aria-label="Checkbox for following text input">
-                                    </div>
-                                    </div>
-                                    <div class="col-10">
-                                        <div class="p-2 rounded border border-info bg-light text-left ">
-                                            <a HREF="../html/notificaciones.html"><h5>4</h5></a>
-                                            <p>PERLA HERNANDEZ ha asignado un nuevo entregable.</p>
-                                        </div>
-                                    </div>
-                                    <div id="fecha_notificacion">
-                                        <p align="right">26/03/22</p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+                <!-- Navbar content notifications -->
+                <ul>
+                  <li>
+
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <input type="checkbox" aria-label="Checkbox for following text input">
+                        </div>
+                      </div>
+                      <div class="col-10">
+                        <div class="p-2 rounded border border-info bg-light text-left ">
+                          <a HREF="../html/notificaciones.html">
+                            <h5>1</h5>
+                          </a>
+                          <p>PERLA HERNANDEZ ha asignado un nuevo entregable.</p>
+                        </div>
+                      </div>
+                      <div id="fecha_notificacion">
+                        <p align="right">05/04/20</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <br>
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <input type="checkbox" aria-label="Checkbox for following text input">
+                        </div>
+                      </div>
+                      <div class="col-10">
+                        <div class="p-2 rounded border border-info bg-light text-left ">
+                          <a HREF="../html/notificaciones.html">
+                            <h5>2</h5>
+                          </a>
+                          <p>PERLA HERNANDEZ ha asignado un nuevo entregable.</p>
+                        </div>
+                      </div>
+                      <div id="fecha_notificacion">
+                        <p align="right">03/04/22</p>
+                      </div>
+                    </div>
+
+                  </li>
+                  <li>
+                    <br>
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <input type="checkbox" aria-label="Checkbox for following text input">
+                        </div>
+                      </div>
+                      <div class="col-10">
+                        <div class="p-2 rounded border border-info bg-light text-left ">
+                          <a HREF="../html/notificaciones.html">
+                            <h5>3</h5>
+                          </a>
+                          <p>PERLA HERNANDEZ ha asignado un nuevo entregable.</p>
+                        </div>
+                      </div>
+                      <div id="fecha_notificacion">
+                        <p align="right">01/04/22</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <br>
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <input type="checkbox" aria-label="Checkbox for following text input">
+                        </div>
+                      </div>
+                      <div class="col-10">
+                        <div class="p-2 rounded border border-info bg-light text-left ">
+                          <a HREF="../html/notificaciones.html">
+                            <h5>4</h5>
+                          </a>
+                          <p>PERLA HERNANDEZ ha asignado un nuevo entregable.</p>
+                        </div>
+                      </div>
+                      <div id="fecha_notificacion">
+                        <p align="right">26/03/22</p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
               </div>
               <div class="d-grid">
                 <div class="my-4">
-            
+
                 </div>
               </div>
             </div>
