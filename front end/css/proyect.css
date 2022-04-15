@@ -123,3 +123,12 @@ body::after {
 .loading::after {
     top: 0;
 }
+
+.altura_boton_fix {
+    height: 100%;
+    width: 100%;
+}
+
+.fix_bar_side {
+    width: 100%;
+}
