@@ -2,29 +2,30 @@ const { sequelize } = require("../config/sequelize");
 const { handleError } = require("./error.controller");
 const ModelValidator = require("../validator/ModelValidator");
 
-function existsTarea(req, res, next) {
-  sequelize.models.Tarea.findOne({ where: { id_tarea: req.params.id_tarea } })
-    .then((tarea) => {
-      if (tarea) next();
-      else res.sendStatus(404);
-    })
-    .catch((err) => handleError(req, res, err));
+async function existsTarea(req, res, next) {
+  const { id_tarea } = req.params;
+
+  try {
+    const tarea = await sequelize.models.Tarea.findOne({ where: { id_tarea } });
+    tarea ? next() : res.sendStatus(404);
+  } catch (err) {
+    handleError(req, res, err);
+  }
 }
 
 function buildTarea(body) {
   return sequelize.models.Tarea.build({
-    nombre_tarea: body.nombre_tarea,
-    fecha_inicio: body.fecha_inicio,
-    fecha_limite: body.fecha_limite || null,
-    fecha_fin: body.fecha_fin || null,
+    estado: body.estado,
+    titulo: body.titulo,
     descripcion: body.descripcion,
+    fecha_asignacion: body.fecha_asignacion,
+    fecha_termino: body.fecha_termino || null,
+    id_etapa: body.id_etapa,
   });
 }
 
 async function createTarea(req, res) {
   let tarea = buildTarea(req.body);
-  console.log("****TAREA***");
-  console.log(req.body);
 
   try {
     await sequelize.transaction(async (t) => {
@@ -62,29 +63,70 @@ function validateTarea(requestType) {
   };
 }
 
+function getTareas(req, res) {
+  const { id_proyecto } = req.params;
+
+  sequelize.models.Tarea.findAll({
+    attributes: [
+      "id_tarea",
+      "estado",
+      "titulo",
+      "descripcion",
+      "fecha_asignacion",
+      "fecha_termino",
+      "id_etapa",
+    ],
+    include: [
+      {
+        model: sequelize.models.Etapa,
+        attributes: ["id_etapa", "nombre", "estado"],
+        where: { id_proyecto },
+      },
+      {
+        model: sequelize.models.Responsable,
+        attributes: ["matricula"],
+      },
+    ],
+  })
+    .then(async (tareas) => {
+      if (!tareas) return [];
+      return await res.json(tareas);
+    })
+    .catch((err) => handleError(req, res, err));
+}
+
 function findDetalles(req, res) {
   const { id_tarea } = req.params;
 
   sequelize.models.Tarea.findOne({
-    include: {
-      attributes: [],
-      include: {
-        model: sequelize.models.Tarea,
-      },
-    },
     attributes: [
       "id_tarea",
-      "nombre_tarea",
-      "fecha_inicio",
-      "fecha_limite",
-      "fecha_fin",
+      "estado",
+      "titulo",
       "descripcion",
+      "fecha_asignacion",
+      "fecha_termino",
+      "id_etapa",
+    ],
+    include: [
+      {
+        model: sequelize.models.Etapa,
+        attributes: ["id_etapa", "nombre", "estado"],
+      },
+      {
+        model: sequelize.models.Responsable,
+        attributes: ["matricula"],
+      },
     ],
     where: { id_tarea },
   })
-  .catch((err) => {
-    handleError(req, res, err);
-  });
+    .then(async (tareas) => {
+      if (!tareas) return [];
+      return await res.json(tareas);
+    })
+    .catch((err) => {
+      handleError(req, res, err);
+    });
 }
 
 async function updateTarea(req, res) {
@@ -96,11 +138,12 @@ async function updateTarea(req, res) {
     await sequelize.transaction(async (t) => {
       await tarea.update(
         {
-          nombre_tarea: req.body.nombre_tarea,
-          fecha_inicio: req.body.fecha_inicio,
-          fecha_limite: req.body.fecha_limite || null,
-          fecha_fin: req.body.fecha_fin || null,
+          estado: req.body.estado,
+          titulo: req.body.titulo,
           descripcion: req.body.descripcion,
+          fecha_asignacion: req.body.fecha_asignacion,
+          fecha_termino: req.body.fecha_termino || null,
+          id_etapa: req.body.id_etapa,
         },
         {
           transaction: t,
@@ -134,6 +177,7 @@ async function deleteTarea(req, res) {
 module.exports = {
   validateTarea,
   createTarea,
+  getTareas,
   findDetalles,
   updateTarea,
   existsTarea,
