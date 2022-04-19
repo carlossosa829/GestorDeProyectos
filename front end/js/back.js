@@ -66,6 +66,28 @@ function crear_proyecto() {
   })
 }
 
+function crear_tarea() {
+  let nombre_proyecto = document.getElementById("nombre_tarea").value;
+  let  estado_tarea = document.getElementById("estado_tarea").value;
+  let fecha_inicio = document.getElementById("fecha_inicio").value;
+  let fecha_fin = document.getElementById("fecha_fin").value;
+  let descripcion = document.getElementById("descripcion").value;
+  $.ajax({
+    url: "http://localhost:3300/api/v1/anadir_tarea",
+    type: "POST",
+    data: JSON.stringify({ nombre_tarea, estado_tarea, fecha_inicio, fecha_fin, descripcion}),
+    contentType: "application/json; charset=utf-8",
+    dataType: "json",
+    success: function () {
+      alert("Tarea añadida");
+    }, 
+    error: function(){
+      alert ("Tarea añadida");
+      window.location.href = "../html/menu_proyecto.html";
+      }
+  })
+}
+
 
 
 
