@@ -118,7 +118,75 @@
                             <a class="btn btn-warning m-5 p-3" href="../html/menu_proyecto.html"
                                 role="button">Regresar</a>
                         </div>
-                        <img src="../img/construcion.jpg" class="img-fluid" alt="construccion">
+
+                        <div class="container">
+                            <form action="">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="mb-5">
+                                            <label for="proyecto_nombre" class="form-label h4">Nombre del proyecto</label>
+                                            <input type="text" class="form-control" placeholder="Nombre del Proyecto"
+                                                id="proyecto_nombre" required>
+                                        </div>
+                                        <div class="mb-5">
+                                            <label for="proyecto_nrc" class="form-label h4">NRC del proyecto</label>
+                                            <input type="text" class="form-control w-50" placeholder="NRC"
+                                                id="proyecto_nrc" required>
+                                        </div>
+
+                                        <div class="my-5">
+                                            <form action="">
+                                                <label for="buscar_id_name_proyecto" class="mb-3 h4">Buscar ID del
+                                                    colaborador o ingrese su nombre</label>
+                                                <div class="d-flex">
+                                                    <input type="text" class="form-control w-50"
+                                                        placeholder="Buscar ID o nombre del colaborador" required>
+                                                    <button type="button" class="btn btn-primary">
+                                                        <i class="icon ion-md-search"></i>
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                            <div class="d-flex">
+                                                <div class="mr-4">
+                                                    <label for="opciones_integrante" class="mb-3 h5">Permiso para el nuevo
+                                                        colaborador:</label>
+                                                </div>
+                                                <div>
+                                                    <select class="form-select" aria-label="Permiso"
+                                                        id="opciones_integrante" required>
+                                                        <option selected disabled>Permiso</option>
+                                                        <option value="1">Administrador</option>
+                                                        <option value="2">Editor</option>
+                                                        <option value="3">Visualizar</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class="col">
+                                        <p class="h2 mb-3">Descripción del proyecto:</p>
+                                        <p class="h3 mb-5 lead text-justify" id="descripcion_proyecto">Lorem ipsum dolor
+                                            sit amet consectetur adipisicing elit. Blanditiis tenetur
+                                            doloribus iusto nemo? Placeat nobis provident inventore ad praesentium!
+                                            Eligendi odit adipisci praesentium voluptatem exercitationem. Harum eaque ex
+                                            dolore ab.
+                                        </p>
+
+                                        <div class="my-3">
+                                            <button type="submit" class="btn btn-primary w-100 p-3">Agregar
+                                                Colaborador</button>
+                                            <div class="my-4">
+                                                <a href="../html/proyectos.html" id="boton_Cancelar">
+                                                    <input type="button" value="Cancelar"
+                                                        class="btn btn-danger w-100 p-3">
+                                                </a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
