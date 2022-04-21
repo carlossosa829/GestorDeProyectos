@@ -88,6 +88,27 @@ function crear_tarea() {
   })
 }
 
+function agregar_integrante() {
+  let nombre_proyecto = document.getElementById("nombre_Proyecto").value;
+  let  proyecto_nrc = document.getElementById("proyecto_nrc").value;
+  let buscar_id_name_proyecto = document.getElementById("buscar_id_name_proyecto").value;
+  let opciones_integrante = parseInt(document.getElementById("opciones_integrante").value);
+  $.ajax({
+    url: "http://localhost:3300/api/v1/agregar_integrante",
+    type: "POST",
+    data: JSON.stringify({ nombre_Proyecto, proyecto_nrc, buscar_id_name_proyecto, opciones_integrante}),
+    contentType: "application/json; charset=utf-8",
+    dataType: "json",
+    success: function () {
+      alert("Integrante añadido");
+    }, 
+    error: function(){
+      alert ("Integrante añadido");
+      window.location.href = "../html/menu_proyecto.html";
+      }
+  })
+}
+
 
 
 
