@@ -51,7 +51,7 @@ a:hover {
 
 #content {
     overflow-y: auto;
-    height: 85vh;
+    height: 100vh;
     padding-bottom: 5rem;
 
 }
@@ -149,19 +149,28 @@ body::after {
 
 .pie-pagina .grupo-2{
     background-color: #0a1a2a;
-    padding: 15px 10px;
     text-align: center;
     color: #fff;
+    padding: 32px;
+    height: 10vh;
+    position: fixed;
+    bottom: -5%;
+    width: 100%;
+   
 }
 
 .pie-pagina .grupo-2 small{
     font-size: 15px;
+    
 }
-@media screen and (max-width:800px){
+
+
+@media screen and (max-width:1800px){
     .pie-pagina .grupo-1{
         width: 90%;
         grid-template-columns: repeat(1, 1fr);
         grid-gap:30px;
-        padding: 35px 0px;
+        padding: 35px 10px;
+        
     }
 }
