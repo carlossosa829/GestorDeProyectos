@@ -30,7 +30,19 @@
 
 .dropdown-item {
   /*# Botones de submenu */
-  background: linear-gradient(to right, #f8efad, #bfffc1);
+ 
 }
 
 /*# sourceMappingURL=estilos.css.map */
+@media screen and (max-width: 850px) {
+  .d-flex {
+    /*# Fondo principal */
+    background: linear-gradient(to right, #1dc87b, #cae14d);
+  }
+  .d-block {
+  /*# Botones de menu */
+  background: linear-gradient(to right, #f8efad, #f8efad);
+}
+
+
+}
