@@ -1,0 +1,26 @@
+### Campos vacios
+
+POST http://192.168.100.6:3300/api/v1/proyectos/1/equipo
+Content-Type: application/json
+
+{
+
+}
+
+### Matrícula inexistente
+
+POST http://192.168.100.6:3300/api/v1/proyectos/1/equipo
+Content-Type: application/json
+
+{
+    "matricula": 201700000
+}
+
+### Matrícula existente
+
+POST http://192.168.100.6:3300/api/v1/proyectos/3/equipo
+Content-Type: application/json
+
+{
+    "matricula": 201749575,
+}

@@ -1,7 +1,9 @@
-const { sequelize } = require("../config/sequelize");
-const { handleError } = require("./error.controller");
 const jwt = require("jsonwebtoken");
 const JWTACCESSSECRET = "12345";
+
+const { sequelize } = require("../config/sequelize");
+const { handleError } = require("./error.controller");
+const ModelValidator = require("../validator/ModelValidator");
 
 function getAccessToken(user) {
   return jwt.sign(user, JWTACCESSSECRET, { expiresIn: 60 * 60 * 24 });
@@ -29,21 +31,49 @@ async function findUser(email) {
   });
 }
 
-async function authenticateUser(req, res) {
-  try {
-    let usuario = await findUser(req.body.email);
+async function validateUsuario(req, res, next) {
+  const { email, contrasena } = req.body;
+  let usuario = sequelize.models.Usuario.build({
+    email,
+    contrasena,
+    rol: "Alumno",
+  });
+  let validator = new ModelValidator();
 
-    if (!usuario) return res.sendStatus(401);
+  try {
+    let skip = ["id_usuario", "id_persona", "rol", "foto"];
+
+    await validator.validate(usuario, { skip });
+  } catch (err) {
+    return handleError(req, res, err);
+  }
+
+  let validationErrors = validator.getErrors();
+
+  if (validationErrors)
+    return res.status(422).json({ errors: validationErrors });
+  else next();
+}
+
+async function authenticateUser(req, res) {
+  const { email, contrasena } = req.body;
+
+  try {
+    usuario = await findUser(email);
+
+    if (!usuario)
+      return res.status(401).json({ message: "Email o contraseña invalidos." });
 
     let matricula = await getMatricula(usuario.id_persona, usuario.rol);
 
     const authenticated =
       await sequelize.models.Usuario.prototype.comparePassword(
-        req.body.contrasena,
+        contrasena,
         usuario.contrasena
       );
 
-    if (!authenticated) return res.sendStatus(401);
+    if (!authenticated)
+      return res.status(401).json({ message: "Email o contraseña invalidos." });
 
     usuario = {
       id_usuario: usuario.id_usuario,
@@ -54,7 +84,7 @@ async function authenticateUser(req, res) {
       ...(matricula && { matricula }),
     };
 
-    res.json({ token: getAccessToken(usuario), usuario});
+    res.json({ token: getAccessToken(usuario), usuario });
   } catch (err) {
     handleError(req, res, err);
   }
@@ -104,6 +134,7 @@ async function authorizeUser(req, res) {
 }
 
 module.exports = {
+  validateUsuario,
   authenticateUser,
   authorizeUser,
   getMatricula,

@@ -1,0 +1,21 @@
+### Nombre de proyecto demasiado corto
+
+POST http://192.168.100.6:3300/api/v1/proyectos
+Content-Type: application/json
+
+{
+    "nombre_proyecto": "Pro",
+    "fecha_inicio": "2022-05-02",
+    "nrc": 30739
+}
+
+### Materia inexistente
+
+POST http://192.168.100.6:3300/api/v1/proyectos
+Content-Type: application/json
+
+{
+    "nombre_proyecto": "Proyecto nuevo",
+    "fecha_inicio": "2022-05-02",
+    "nrc": 30700
+}

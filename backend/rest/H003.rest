@@ -1,0 +1,26 @@
+### Campos vacios
+
+POST http://192.168.100.6:3300/api/v1/proyectos
+Content-Type: application/json
+
+{
+    "fecha_inicio": "2022-02-14",
+    "fecha_limite": "2022-05-14",
+    "descripcion": "Proyecto1",
+    "nrc": 31536
+}
+
+### Datos correctos
+
+POST http://192.168.100.6:3300/api/v1/proyectos
+Content-Type: application/json
+
+{
+    "nombre_proyecto": "ProyectoUno",
+    "fecha_inicio": "2022-02-14",
+    "fecha_limite": "2022-05-14",
+    "descripcion": "Proyecto1",
+    "nrc": 31536,
+    "coordinador": 201749575,
+    "equipo": [201749575]
+}

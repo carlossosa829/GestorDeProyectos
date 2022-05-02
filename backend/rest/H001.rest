@@ -1,0 +1,48 @@
+### Campos vacios
+
+POST http://192.168.100.6:3300/api/v1/alumnos
+Content-Type: application/json
+
+{
+    "nombre": "Luis Arturo",
+    "paterno": "Tenorio",
+    "materno": "López",
+    "sexo": "H",
+    "contrasena": "arturo123",
+    "id_carrera": 1252,
+    "matricula": 201700001,
+    "rol": "alumno"   
+}
+
+### Caracteres invalidos
+
+POST http://192.168.100.6:3300/api/v1/alumnos
+Content-Type: application/json
+
+{
+    "nombre": "Luis Arturo1",
+    "paterno": "Tenorio2",
+    "materno": "López",
+    "sexo": "H",
+    "email": "arturo@alumno.com",
+    "contrasena": "arturo123",
+    "id_carrera": 1252,
+    "matricula": 201700001,
+    "rol": "alumno"   
+}
+### Correo invalido
+
+POST http://192.168.100.6:3300/api/v1/alumnos
+Content-Type: application/json
+
+{
+    "nombre": "Luis Arturo",
+    "paterno": "Tenorio",
+    "materno": "López",
+    "sexo": "H",
+    "email": "arturoalumno.com",
+    "contrasena": "arturo123",
+    "id_carrera": 1252,
+    "matricula": 201700001,
+    "rol": "alumno"   
+}

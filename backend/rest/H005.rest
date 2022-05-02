@@ -1,0 +1,19 @@
+### Permiso inválido
+
+PUT http://192.168.100.6:3300/api/v1/proyectos/1/equipo
+Content-Type: application/json
+
+{
+    "matricula": 201749575,     
+    "rol": "Evaluador"
+}
+
+### Matrícula inexistente
+
+PUT http://192.168.100.6:3300/api/v1/proyectos/1/equipo
+Content-Type: application/json
+
+{
+    "matricula": 201749500,     
+    "rol": "EDITOR"
+}

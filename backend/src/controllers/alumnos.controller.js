@@ -218,7 +218,11 @@ async function deleteAlumno(req, res) {
       ).destroy({ transaction: t });
     });
 
-    res.sendStatus(200);
+    res
+      .status(200)
+      .json({
+        message: `El alumno ${alumno.get("matricula")} ha sido eliminado.`,
+      });
   } catch (err) {
     errorController.handleError(req, res, err);
   }
