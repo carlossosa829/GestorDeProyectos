@@ -32,7 +32,7 @@ async function createTarea(req, res) {
       tarea = await tarea.save({ transaction: t, validate: false });
     });
 
-    return res.sendStatus(201);
+    return res.status(201).json({ message: "Tarea creada con exito" });
   } catch (err) {
     handleError(req, res, err);
   }
@@ -168,7 +168,7 @@ async function deleteTarea(req, res) {
       await tarea.destroy({ transaction: t });
     });
 
-    res.sendStatus(200);
+    return res.status(200).json({ message: "Tarea eliminada con exito" });
   } catch (err) {
     handleError(req, res, err);
   }

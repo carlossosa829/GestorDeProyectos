@@ -1,0 +1,29 @@
+### Campos vacíos
+
+POST http://192.168.100.6:3300/api/v1/tareas
+Content-Type: application/json
+
+{
+    "descripcion": "Crear el repositorio",
+    "fecha_asignacion": "2022-04-16",
+    "fecha_termino": "2022-05-16",
+    "id_etapa": 2
+}
+
+### Tarea creada con exito
+
+POST http://192.168.100.6:3300/api/v1/tareas
+Content-Type: application/json
+
+{
+    "titulo": "Nueva tarea",
+    "estado": "PENDIENTE",
+    "descripcion": "Crear el repositorio",
+    "fecha_asignacion": "2022-04-16",
+    "fecha_termino": "2022-05-16",
+    "id_etapa": 2
+}
+
+### Tarea eliminada con exito
+
+DELETE http://192.168.100.6:3300/api/v1/tareas/4
