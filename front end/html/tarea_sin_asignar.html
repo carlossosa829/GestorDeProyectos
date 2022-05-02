@@ -20,7 +20,7 @@
     <!-- Ionic icons -->
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
 
-    <title>Menu Proyecto</title>
+    <title>Tarea sin asignar</title>
 </head>
 
 <body data-barba="wrapper">
@@ -166,19 +166,11 @@
                 <!-- Page Content -->
                 <div id="content" class="bg-grey w-100">
                     <div class="container w-100">
-                        <h1 id="nombre_Proyecto" class="mt-5">SCHOOL</h1>
+                        <h1 class="mt-5">Tareas sin asignar</h1>
+                        <h2 class="mt-5">Nombre del Proyecto: <span id="nombre_Proyecto"></span>SCHOOL</h2>
                         <div class="d-flex flex-row-reverse bd-highlight">
-                            <a class="btn btn-warning m-5 p-3" href="../html/anadir_tarea.html" role="button">Crear
-                                Nueva
-                                Tarea</a>
-                            <a class="btn btn-danger m-5 p-3" href="../html/integrante_proyecto.html"
-                                role="button">Integrantes</a>
-                            <a class="btn btn-dark m-5 p-3" href="../html/agregar_integrantes_p.html"
-                                role="button">Añadir
-                                colaboradores</a>
-                            <a class="btn btn-info m-5 p-3" href="../html/tarea_sin_asignar.html" role="button">Tareas
-                                sin asignar</a>
-                            <!-- <a class="btn btn-secondary m-5 p-3" href="../html/agregar_integrantes_p.html" role="button">Tareas sin asignar</a> -->
+                            <a class="btn btn-warning m-5 p-3" href="../html/menu_proyecto.html"
+                                role="button">Regresar</a>
                         </div>
 
                         <table class="table table-dark table-striped" id="table_proyecto">
@@ -187,8 +179,7 @@
                                     <th scope="col" class="h4">#</th>
                                     <th scope="col" class="h4">Nombre de la tarea</th>
                                     <th scope="col" class="h4">Estado</th>
-                                    <th scope="col" class="h4">Asignando</th>
-                                    <th scope="col" class="h4 text-center">Acción</th>
+                                    <th scope="col" class="h4">Opciones</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -196,21 +187,9 @@
                                     <th scope="row" id="num_tarea">1</th>
                                     <td id="nombre_tarea">Planteamiento</td>
                                     <td id="estado_tarea">Finalizada</td>
-                                    <td id="id_alumno">DAVID CANIZO CORTES</td>
                                     <td>
                                         <div class="container">
                                             <div class="row">
-                                                <div class="col">
-                                                    <form action="">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" value=""
-                                                                id="flexCheckDefault">
-                                                            <label class="form-check-label" for="flexCheckDefault">
-                                                                Finalizar
-                                                            </label>
-                                                        </div>
-                                                    </form>
-                                                </div>
                                                 <div class="col">
                                                     <div class="btn-group dropright menu"
                                                         aria-labelledby="dropdownMenuLink">
@@ -222,13 +201,10 @@
                                                         </button>
                                                         <div class="dropdown-menu">
                                                             <!-- Dropdown menu links -->
-                                                            <a class="dropdown-item" href="../html/detalles_tarea.html"
-                                                                id="detalles_tarea">Detalle de la tarea</a>
-                                                            <a class="dropdown-item" href="#">Editar Tarea</a>
+                                                            <a class="dropdown-item"
+                                                                href="../html/editar_tarea.html">Asignar responsable</a>
                                                             <a class="dropdown-item" href="#"
                                                                 id="eliminar_tarea">Eliminar</a>
-                                                            <a class="dropdown-item" href="#"
-                                                                id="guardar_cambios_tarea">Guardar Cambios</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -241,21 +217,9 @@
                                     <th scope="row" id="num_tarea">2</th>
                                     <td id="nombre_tarea">Implementación</td>
                                     <td id="estado_tarea">Finalizada</td>
-                                    <td id="id_alumno">ARIADNE SUSANA</td>
                                     <td>
                                         <div class="container">
                                             <div class="row">
-                                                <div class="col">
-                                                    <form action="">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" value=""
-                                                                id="flexCheckDefault">
-                                                            <label class="form-check-label" for="flexCheckDefault">
-                                                                Finalizar
-                                                            </label>
-                                                        </div>
-                                                    </form>
-                                                </div>
                                                 <div class="col">
                                                     <div class="btn-group dropright menu"
                                                         aria-labelledby="dropdownMenuLink">
@@ -267,13 +231,10 @@
                                                         </button>
                                                         <div class="dropdown-menu">
                                                             <!-- Dropdown menu links -->
-                                                            <a class="dropdown-item" href="../html/detalles_tarea.html"
-                                                                id="detalles_tarea">Detalle de la tarea</a>
-                                                            <a class="dropdown-item" href="#">Editar Tarea</a>
+                                                            <a class="dropdown-item"
+                                                                href="../html/editar_tarea.html">Asignar responsable</a>
                                                             <a class="dropdown-item" href="#"
                                                                 id="eliminar_tarea">Eliminar</a>
-                                                            <a class="dropdown-item" href="#"
-                                                                id="guardar_cambios_tarea">Guardar Cambios</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -286,21 +247,9 @@
                                     <th scope="row" id="num_tarea">3</th>
                                     <td id="nombre_tarea">Investigación</td>
                                     <td id="estado_tarea">Finalizada</td>
-                                    <td id="id_alumno">ARIADNE SUSANA</td>
                                     <td>
                                         <div class="container">
                                             <div class="row">
-                                                <div class="col">
-                                                    <form action="">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" value=""
-                                                                id="flexCheckDefault">
-                                                            <label class="form-check-label" for="flexCheckDefault">
-                                                                Finalizar
-                                                            </label>
-                                                        </div>
-                                                    </form>
-                                                </div>
                                                 <div class="col">
                                                     <div class="btn-group dropright menu"
                                                         aria-labelledby="dropdownMenuLink">
@@ -312,13 +261,10 @@
                                                         </button>
                                                         <div class="dropdown-menu">
                                                             <!-- Dropdown menu links -->
-                                                            <a class="dropdown-item" href="../html/detalles_tarea.html"
-                                                                id="detalles_tarea">Detalle de la tarea</a>
-                                                            <a class="dropdown-item" href="#">Editar Tarea</a>
+                                                            <a class="dropdown-item"
+                                                                href="../html/editar_tarea.html">Asignar responsable</a>
                                                             <a class="dropdown-item" href="#"
                                                                 id="eliminar_tarea">Eliminar</a>
-                                                            <a class="dropdown-item" href="#"
-                                                                id="guardar_cambios_tarea">Guardar Cambios</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -330,21 +276,9 @@
                                     <th scope="row" id="num_tarea">4</th>
                                     <td id="nombre_tarea">Cierre</td>
                                     <td id="estado_tarea">Finalizada</td>
-                                    <td id="id_alumno">DAVID CANIZO CORTES</td>
                                     <td>
                                         <div class="container">
                                             <div class="row">
-                                                <div class="col">
-                                                    <form action="">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" value=""
-                                                                id="flexCheckDefault">
-                                                            <label class="form-check-label" for="flexCheckDefault">
-                                                                Finalizar
-                                                            </label>
-                                                        </div>
-                                                    </form>
-                                                </div>
                                                 <div class="col">
                                                     <div class="btn-group dropright menu"
                                                         aria-labelledby="dropdownMenuLink">
@@ -356,13 +290,10 @@
                                                         </button>
                                                         <div class="dropdown-menu">
                                                             <!-- Dropdown menu links -->
-                                                            <a class="dropdown-item" href="#"
-                                                                id="detalles_tarea">Detalle de la tarea</a>
-                                                            <a class="dropdown-item" href="#">Editar Tarea</a>
+                                                            <a class="dropdown-item"
+                                                                href="../html/editar_tarea.html">Asignar responsable</a>
                                                             <a class="dropdown-item" href="#"
                                                                 id="eliminar_tarea">Eliminar</a>
-                                                            <a class="dropdown-item" href="#"
-                                                                id="guardar_cambios_tarea">Guardar Cambios</a>
                                                         </div>
                                                     </div>
                                                 </div>

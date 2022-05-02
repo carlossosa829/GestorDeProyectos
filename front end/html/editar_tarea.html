@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -13,14 +13,13 @@
   <!-- Styles -->
   <link rel="stylesheet" href="../css/proyect.css">
   <link rel="stylesheet" href="../css/estilos.css">
-
   <!-- Google fonts -->
   <link href="https://fonts.googleapis.com/css?family=Muli:300,700&display=swap" rel="stylesheet">
 
   <!-- Ionic icons -->
   <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
 
-  <title>Añadir Tarea</title>
+  <title>Editar Tarea</title>
 </head>
 
 <body data-barba="wrapper">
@@ -70,7 +69,7 @@
             </li>
             <li class="fix_bar_side">
               <a href="../html/notificaciones.html"
-                class="d-block text-dark p-3 border-0 my-3 h3 font-weight-bold btn btn-secondary  icon ion-md-notifications lead mr-3"><i
+                class="d-block text-dark p-3 border-0 my-3 h3 font-weight-bold btn btn-secondary icon ion-md-notifications lead mr-3"><i
                   class=""></i>
                 Notificaciones</a>
             </li>
@@ -158,18 +157,28 @@
             <div class="row">
               <form action="#"></form>
               <div class="col my-3">
-                <h1>Nueva Tarea</h1>
+                <h1>Editar tarea</h1>
                 <div class="mb-4">
-                  <label for="text" class="form-label">Nombre de la tarea</label>
+                  <label for="text" class="form-label">Crear repositorio</label>
                   <input type="text" class="form-control" id="nombre_tarea" placeholder="Tarea" required>
                 </div>
                 <div class="mb-4">
-                  <label for="text" class="form-label">Estado</label>
-                  <input type="text" class="form-control" id="estado_tarea" value="Activa" disabled>
+                  <label for="text" class="form-label" id="tarea_estado">Activo</label>
+                  <select class="form-select w-100 h-2" aria-label="Estado">
+                    <option selected disabled>Estado</option>
+                    <option value="1">Activo</option>
+                    <option value="2">Finalizado</option>
+                  </select>
                 </div>
                 <div class="mb-1">
-                  <label for="text" class="form-label">Ingresar el ID del alumno</label>
-                  <input type="tel" class="form-control" id="Id_alumno_tarea" placeholder="ID del alumno" required>
+                  <label for="text" class="form-label">¿Eliminar alumno de la tarea?</label>
+                  <p class="text-center" id="nombre_alumno">DAVID CANIZO CORTES</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="eliminar_alumno_tarea">
+                    <label class="form-check-label" for="eliminar_alumno_tarea">
+                      Eliminar
+                    </label>
+                  </div>
                 </div>
                 <div class="mt-5 mb-4">
                   <label for="text" class="form-label">Fecha de inicio de la tarea: </label>
@@ -180,22 +189,22 @@
                 <div class="mb-4">
                   <label for="text" class="form-label">Fecha de fin de la tarea: </label>
                   <br>
-                  <input type="date" id="fecha_fin_tarea" name="trip-start" value="2022-03-25" min="2018-01-01"
+                  <input type="date" id="fecha_fin_tarea" name="trip-start" value="2022-04-02" min="2018-01-01"
                     max="2099-12-31">
                 </div>
               </div>
               <div class="col">
                 <div class="mt-5 mb-4">
                   <label for="text" class="form-label mt-4">Descripción de la tarea: </label>
-                  <textarea class="form-control text_area_1" id="descripcion_tarea" rows="11"></textarea>
+                  <textarea class="form-control text_area_1" id="descripcion_tarea"
+                    rows="11">Crear un repositorio en github con los datos del proyecto y agregar a los integrantes del proyecto.</textarea>
                 </div>
                 <div class="d-grid ">
-                  <button type="submit" onclick="crear_tarea()" class="btn btn-primary w-100">Crear Tarea</button>
-                  <div class="my-4">
-                    <a href="../html/proyectos.html" id="boton_Cancelar">
-                      <input type="button" value="Cancelar" class="btn btn-danger w-100">
-                    </a>
-                  </div>
+                  <a type="submit" class="btn btn-primary w-100" href="../html/proyectos.html">Guardar tarea</a>
+                  <a type="submit" class="btn btn-warning w-100 my-3" href="../html/proyectos.html">Borrar tarea</a>
+                  <a href="../html/proyectos.html" id="boton_Cancelar">
+                    <input type="button" value="Cancelar" class="btn btn-danger w-100">
+                  </a>
                 </div>
               </div>
               </form>
@@ -204,6 +213,7 @@
         </div>
       </div>
     </div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -224,7 +234,6 @@
       const profile = JSON.parse(localStorage.getItem("datos"));
       document.getElementById("profileName").innerHTML = profile.usuario.nombre;
     </script>
-    <script src="../js/back.js"></script>
   </div>
   <!--::::Pie de Pagina::::::-->
   <footer class="pie-pagina">

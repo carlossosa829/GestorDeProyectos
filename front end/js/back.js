@@ -66,6 +66,49 @@ function crear_proyecto() {
   })
 }
 
+function crear_tarea() {
+  let nombre_proyecto = document.getElementById("nombre_tarea").value;
+  let  estado_tarea = document.getElementById("estado_tarea").value;
+  let fecha_inicio = document.getElementById("fecha_inicio").value;
+  let fecha_fin = document.getElementById("fecha_fin").value;
+  let descripcion = document.getElementById("descripcion").value;
+  $.ajax({
+    url: "http://localhost:3300/api/v1/anadir_tarea",
+    type: "POST",
+    data: JSON.stringify({ nombre_tarea, estado_tarea, fecha_inicio, fecha_fin, descripcion}),
+    contentType: "application/json; charset=utf-8",
+    dataType: "json",
+    success: function () {
+      alert("Tarea añadida");
+    }, 
+    error: function(){
+      alert ("Tarea añadida");
+      window.location.href = "../html/menu_proyecto.html";
+      }
+  })
+}
+
+function agregar_integrante() {
+  let nombre_proyecto = document.getElementById("nombre_Proyecto").value;
+  let  proyecto_nrc = document.getElementById("proyecto_nrc").value;
+  let buscar_id_name_proyecto = document.getElementById("buscar_id_name_proyecto").value;
+  let opciones_integrante = parseInt(document.getElementById("opciones_integrante").value);
+  $.ajax({
+    url: "http://localhost:3300/api/v1/agregar_integrante",
+    type: "POST",
+    data: JSON.stringify({ nombre_Proyecto, proyecto_nrc, buscar_id_name_proyecto, opciones_integrante}),
+    contentType: "application/json; charset=utf-8",
+    dataType: "json",
+    success: function () {
+      alert("Integrante añadido");
+    }, 
+    error: function(){
+      alert ("Integrante añadido");
+      window.location.href = "../html/menu_proyecto.html";
+      }
+  })
+}
+
 
 
 

@@ -1,4 +1,23 @@
-.custom-element {
-    color: $gray-100;
-    background-color: $dark;
-  }
+.navbar{/*# Barra de navegacion superior*/
+  background: linear-gradient(to right,  #20b9d8, #087d8f);
+}
+.logo{/*# Logo del menu */
+  background: linear-gradient(to right, #20b9d8, #20b9d8);
+}
+.d-flex{/*# Fondo principal */
+  background: linear-gradient(to right, #e1e0eb, #e1e0eb);
+}
+.menu-lateral{/*# Fondo de menu lateral */
+  background: linear-gradient(to right, #1dc87b, #cae14d);
+}
+.fix_bar_side{/*# Fondo de menu lateral */
+  background: linear-gradient(to right, #1dc87b, #cae14d);
+}
+.d-block{ /*# Botones de menu */
+  background: linear-gradient(to right, #f8efad, #f8efad);
+}
+.dropdown-item{/*# Botones de submenu */
+  background: linear-gradient(to right, #f8efad, #bfffc1);
+}
+
+

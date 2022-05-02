@@ -30,7 +30,7 @@ const Tarea = sequelize.define(
     },
     descripcion: {
       type: DataTypes.STRING(200),
-      allowNull: true,
+      allowNull: false,
       validate: {
         len: {
           args: [0, 200],
@@ -63,6 +63,10 @@ const Tarea = sequelize.define(
         },
       },
     },
+    id_etapa: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
   },
   {
     tableName: "tarea",
@@ -80,6 +84,21 @@ Tarea.associate = function (models) {
   models.Tarea.belongsToMany(models.Alumno, {
     through: models.Responsable,
     foreignKey: "id_tarea",
+  });
+
+  models.Tarea.hasMany(models.Responsable, {
+    foreignKey: {
+      name: "id_tarea",
+      allowNull: false,
+    },
+  });
+
+  models.Tarea.belongsTo(models.Etapa, {
+    foreignKey: {
+      name: "id_etapa",
+      allowNull: false,
+    },
+    onDelete: "CASCADE",
   });
 };
 

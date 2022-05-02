@@ -18,6 +18,8 @@ router.use("/materias", require("./materias"));
 router.use("/proyectos", require("./proyectos"));
 router.use("/archivos", require("./archivos"));
 router.use("/asignacion", require("./asignacion"));
+router.use("/tareas", require("./tareas"));
+router.use("/responsables", require("./responsables"));
 router.use("/entregables", require("./entregables"));
 router.use("/cierre", require("./cierre"));
 router.use("/usuarios", require("./usuarios"));
