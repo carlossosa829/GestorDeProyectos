@@ -1,48 +1,54 @@
 .navbar {
   /*# Barra de navegacion superior*/
-  background: linear-gradient(to right, #20b9d8, #087d8f);
+  /* background: linear-gradient(to right, #20b9d8, #087d8f); */
+  /* background-color: #66d7d1; */
+  background: linear-gradient(to right, #66d7d1, #66d7d1);
 }
 
 .logo {
   /*# Logo del menu */
-  background: linear-gradient(to right, #20b9d8, #20b9d8);
+  /* background: linear-gradient(to right, #20b9d8, #20b9d8); */
+  background: linear-gradient(to right, #66d7d1, #66d7d1);
 }
 
 .d-flex {
   /*# Fondo principal */
-  background: linear-gradient(to right, #e1e0eb, #e1e0eb);
+  /* background: linear-gradient(to right, #e1e0eb, #e1e0eb); */
+  background: linear-gradient(to right, #e5eaf5, #e5eaf5);
 }
 
 .menu-lateral {
   /*# Fondo de menu lateral */
-  background: linear-gradient(to right, #1dc87b, #cae14d);
+  background: linear-gradient(to right, #ff637d, #ff637d);
 }
 
 .fix_bar_side {
   /*# Fondo de menu lateral */
-  background: linear-gradient(to right, #1dc87b, #cae14d);
+  background: linear-gradient(to right, #ff637d, #ff637d);
 }
 
 .d-block {
   /*# Botones de menu */
-  background: linear-gradient(to right, #f8efad, #f8efad);
-}
-
-.dropdown-item {
-  /*# Botones de submenu */
- 
+  background: linear-gradient(to right, #eaf2e3, #eaf2e3);
+  border-radius: 67px 67px 67px 67px;
+  -moz-border-radius: 67px 67px 67px 67px;
+  -webkit-border-radius: 67px 67px 67px 67px;
+  border: 9px solid #000000;
 }
 
 /*# sourceMappingURL=estilos.css.map */
 @media screen and (max-width: 850px) {
   .d-flex {
     /*# Fondo principal */
-    background: linear-gradient(to right, #1dc87b, #cae14d);
+    background: linear-gradient(to right, #ff637d, #ff637d);
   }
+
   .d-block {
-  /*# Botones de menu */
-  background: linear-gradient(to right, #f8efad, #f8efad);
-}
-
-
+    /*# Botones de menu */
+    background: linear-gradient(to right, #eaf2e3, #eaf2e3);
+    border-radius: 67px 67px 67px 67px;
+    -moz-border-radius: 67px 67px 67px 67px;
+    -webkit-border-radius: 67px 67px 67px 67px;
+    border: 9px solid #000000;
+  }
 }
