@@ -194,7 +194,7 @@
                   <textarea class="form-control text_area_1" id="descripcion" rows="11"></textarea>
                 </div>
                 <div class="d-grid ">
-                  <button type="submit" class="btn btn-primary w-100" onclick="crear_proyecto()">Crear Proyecto</button>
+                  <button type="submit" class="btn btn-primary w-100" onclick="newProject()">Crear Proyecto</button>
                   <div class="my-4">
                     <a href="../html/proyectos.html" id="boton_Cancelar">
                       <input type="button" value="Cancelar" class="btn btn-danger w-100">
@@ -227,10 +227,9 @@
       integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../js/barba.min.js"></script>
     <script type="text/javascript" src="../js/custom.js"></script>
-    <script src="../js/back.js"></script>
+    <script src="../js/app.js"></script>
     <script>
-      const profile = JSON.parse(localStorage.getItem("datos"));
-      document.getElementById("profileName").innerHTML = profile.usuario.nombre;
+      document.getElementById("profileName").innerHTML = data().current.nombre;
     </script>
   </div>
 </body>
